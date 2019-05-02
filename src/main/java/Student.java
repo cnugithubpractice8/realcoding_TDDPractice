@@ -20,6 +20,9 @@ public class Student {
         this.number = number;
     }
     public String getNumber(){
+        if (name==null){
+            throw new IllegalArgumentException();
+        }
         return this.number;
     }
     public void addStudent(){

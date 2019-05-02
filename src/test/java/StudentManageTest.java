@@ -48,5 +48,13 @@ public class StudentManageTest {
         assertThat(student.getNumber(),is("201502099"));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void fidnnumberinList(){
+
+        Student student= new Student();
+        assertThat(student.getNumber(),is("201502099"));
+
+
+    }
 
 }
