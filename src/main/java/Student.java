@@ -9,6 +9,9 @@ public class Student {
     private String number;
 
     public String getName() {
+        if (name==null){
+            throw new IllegalArgumentException();
+        }
         return name;
     }
 
@@ -20,7 +23,7 @@ public class Student {
         this.number = number;
     }
     public String getNumber(){
-        if (name==null){
+        if (number==null){
             throw new IllegalArgumentException();
         }
         return this.number;

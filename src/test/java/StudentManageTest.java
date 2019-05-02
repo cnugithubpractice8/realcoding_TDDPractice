@@ -49,12 +49,21 @@ public class StudentManageTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void fidnnumberinList(){
+    public void iffindnullnumber(){
 
         Student student= new Student();
+        student.setName("이현준");
         assertThat(student.getNumber(),is("201502099"));
 
 
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void iffindnullnum(){
 
+        Student student= new Student();
+        student.setNumber("201502099");
+        assertThat(student.getName(),is("이현준"));
+
+
+    }
 }
