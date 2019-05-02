@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 
-public class StudentmanagementTest {
+public class StudentManageTest {
 
     @Test
     public void creatStudent(){
@@ -41,6 +41,29 @@ public class StudentmanagementTest {
         verify(student,times(1)).setName("홍길동");
     }
 
+    @Test
+    public void addStudentNumber(){
+        Student student = new Student();
+        student.setNumber("201502099");
+        assertThat(student.getNumber(),is("201502099"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void iffindnullnumber(){
+
+        Student student= new Student();
+        student.setName("이현준");
+        assertThat(student.getNumber(),is("201502099"));
 
 
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void iffindnullnum(){
+
+        Student student= new Student();
+        student.setNumber("201502099");
+        assertThat(student.getName(),is("이현준"));
+
+
+    }
 }
