@@ -36,6 +36,10 @@ public class Student {
         }
         return this.gender;
     }
+
+    public boolean isMatchNumber(String number){
+        return this.number == number;
+    }
     public void addStudent(){
         Student student = new Student();
         student.setName("김철수");
