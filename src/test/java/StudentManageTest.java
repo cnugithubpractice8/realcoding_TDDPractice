@@ -66,4 +66,21 @@ public class StudentManageTest {
 
 
     }
+    @Test
+    public void callStudentGender(){
+        Student student = mock(Student.class);
+        when(student.getGender()).thenReturn("Male");
+        assertThat(student.getGender(), is("Male"));
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void ifFindNullGender(){
+        Student student = new Student();
+        assertThat(student.getGender(),is("Male"));
+    }
+    @Test
+    public void isMatchNumber(){
+        Student student = new Student();
+        student.setNumber("201702015");
+        assertTrue(student.isMatchNumber("201702015"));
+    }
 }

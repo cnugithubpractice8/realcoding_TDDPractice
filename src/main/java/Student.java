@@ -7,6 +7,7 @@ public class Student {
     List<Student> students = new ArrayList();
     private String name;
     private String number;
+    private String gender;
 
     public String getName() {
         if (name==null){
@@ -27,6 +28,17 @@ public class Student {
             throw new IllegalArgumentException();
         }
         return this.number;
+    }
+    public void setGender(String gender) { this.gender = gender; }
+    public String getGender(){
+        if(gender == null) {
+            throw new IllegalArgumentException();
+        }
+        return this.gender;
+    }
+
+    public boolean isMatchNumber(String number){
+        return this.number == number;
     }
     public void addStudent(){
         Student student = new Student();
